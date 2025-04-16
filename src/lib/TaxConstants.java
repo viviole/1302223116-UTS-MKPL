@@ -10,5 +10,4 @@ public final class TaxConstants {
 
     // Parameter Pajak
     public static final double TAX_RATE = 0.05; // Tarif pajak 5%
-    public static final int MONTHS_IN_YEAR = 12; // Jumlah bulan kerja maksimal
 }
