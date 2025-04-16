@@ -20,12 +20,12 @@ public class Employee {
         }
     }
 
-    public Employee(String employeeId, String firstName, String lastName, String idNumber, String address,
-                    int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean isMale) {
-        this.personalInfo = new PersonalInfo(employeeId, firstName, lastName, idNumber, address, isForeigner, isMale);
-        this.employmentInfo = new EmploymentInfo(yearJoined, monthJoined, dayJoined);
-        this.familyInfo = new FamilyInfo();
-    }
+    public Employee(PersonalInfo personalInfo, EmploymentInfo employmentInfo) {
+		this.personalInfo = personalInfo;
+		this.employmentInfo = employmentInfo;
+		this.familyInfo = new FamilyInfo();
+	}
+	
 
     public void setMonthlySalary(int grade) {
         employmentInfo.setMonthlySalary(grade, personalInfo.isForeigner());
