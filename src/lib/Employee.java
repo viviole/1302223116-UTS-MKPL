@@ -48,13 +48,14 @@ public class Employee {
     }
 
     public int getAnnualIncomeTax() {
-        return TaxFunction.calculateTax(
+        TaxCalculationData taxData = new TaxCalculationData(
                 employmentInfo.getMonthlySalary(),
                 employmentInfo.getOtherMonthlyIncome(),
                 employmentInfo.calculateMonthsWorkedThisYear(),
                 employmentInfo.getAnnualDeductible(),
-                !familyInfo.hasSpouse(),
+                familyInfo.hasSpouse(),
                 familyInfo.getNumberOfChildren()
         );
+		return TaxFunction.calculateTax(taxData);
     }
 }
