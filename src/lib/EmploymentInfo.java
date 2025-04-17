@@ -3,6 +3,11 @@ package lib;
 import java.time.LocalDate;
 
 public class EmploymentInfo {
+    private static final int GRADE_1_SALARY = 3_000_000;
+    private static final int GRADE_2_SALARY = 5_000_000;
+    private static final int GRADE_3_SALARY = 7_000_000;
+    private static final double FOREIGNER_SALARY_MULTIPLIER = 1.5;
+
     private LocalDate joinDate;
     private int monthlySalary;
     private int otherMonthlyIncome;
@@ -15,13 +20,19 @@ public class EmploymentInfo {
     public void setMonthlySalary(int grade, boolean isForeigner) {
         int baseSalary;
         switch (grade) {
-            case 1: baseSalary = 3000000; break;
-            case 2: baseSalary = 5000000; break;
-            case 3: baseSalary = 7000000; break;
+            case 1:
+                baseSalary = GRADE_1_SALARY;
+                break;
+            case 2:
+                baseSalary = GRADE_2_SALARY;
+                break;
+            case 3:
+                baseSalary = GRADE_3_SALARY;
+                break;
             default:
                 throw new IllegalArgumentException("Invalid grade: " + grade);
         }
-        this.monthlySalary = isForeigner ? (int) (baseSalary * 1.5) : baseSalary;
+        this.monthlySalary = isForeigner ? (int) (baseSalary * FOREIGNER_SALARY_MULTIPLIER) : baseSalary;
     }
 
     public void setAdditionalIncome(int income) {
