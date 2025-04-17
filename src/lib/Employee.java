@@ -39,8 +39,8 @@ public class Employee {
         employmentInfo.setAdditionalIncome(income);
     }
 
-    public void setSpouse(String name, String id) {
-        familyInfo.setSpouse(name, id);
+    public void setSpouse(String id) {
+        familyInfo.setSpouse(id);
     }
 
     public void addChild(String name, String id) {
