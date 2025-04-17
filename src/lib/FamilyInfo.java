@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyInfo {
-    private String spouseName;
     private String spouseIdNumber;
     private List<Employee.Child> children = new ArrayList<>();
 
-    public void setSpouse(String name, String idNumber) {
-        this.spouseName = name;
+    public void setSpouse(String idNumber) {
         this.spouseIdNumber = idNumber;
     }
 
